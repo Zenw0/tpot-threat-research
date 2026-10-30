@@ -1,0 +1,1 @@
+alert tcp any any -> any any (msg:"MALWARE Akuma ADB x86_64 C2 registration"; flow:established,to_server; content:"|00 00 00 01 06 78 38 36 5f 36 34 09 61 6b 75 6d 61 2e 61 64 62|"; depth:21; classtype:trojan-activity; sid:9001001; rev:1;)

