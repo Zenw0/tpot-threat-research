@@ -2,7 +2,7 @@
 
 **Original T-Pot honeypot research | October 27–30, 2026 (UTC)**  
 **Author:** Zenw0 / T-Pot Threat Research  
-**Status:** Pre-publication technical review; public evidence package prepared, not yet independently audited by a third party.
+**Status:** Public research release (November 2, 2026 UTC); not yet independently audited by a third party.
 
 ## Executive summary
 

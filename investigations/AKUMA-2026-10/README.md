@@ -2,7 +2,7 @@
 
 **Original honeypot research | October 27–30, 2026**
 
-**Status:** Technical investigation completed for the documented scope. Publication under review.
+**Status:** Technical investigation completed for the documented scope. Publicly released on November 2, 2026 (UTC).
 
 **Full technical report:** [Read the complete AKUMA-2026-10 investigation](./REPORT_EN.md).
 

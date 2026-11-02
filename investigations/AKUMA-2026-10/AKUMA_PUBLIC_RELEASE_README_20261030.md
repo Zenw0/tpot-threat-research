@@ -1,6 +1,6 @@
 # AKUMA ADB / Polygon — Curated Public Evidence Release
 
-**Prepared: October 30, 2026 (UTC). Status: pre-publication review.**
+**Prepared: October 30, 2026 (UTC). Publicly released: November 2, 2026 (UTC).**
 
 This set of supporting materials accompanies our investigation of a Linux x86_64 Akuma sample with SHA-256:
 
@@ -59,4 +59,4 @@ The control traffic was derived from the same laboratory capture, **not** an ind
 6. The decoded IPv4:port pairs are **configured destinations with unverified live service status**, not authenticated active botnet-C2 sightings.
 7. Viewing these files requires **no malware execution and no external network access**.
 
-**Release decision:** These materials are prepared for final privacy and editorial approval by the research owner. Repository publication and third-party submissions require **separate explicit authorization**; nothing is automatically submitted.
+**Release status:** The research owner authorized public repository publication on November 2, 2026 (UTC). External media outreach and threat-intelligence submissions are separate actions; these artifacts do not automatically submit data to any third party.
